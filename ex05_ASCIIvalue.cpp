@@ -9,10 +9,9 @@ int main()
     std::cin >> ch; // being single character, has input of single ch
 
     //Cast the char into an in, wich is the ASCII value of the character
-    int asciiValue = (int)ch;
+    int asciiValue = (int)ch;  //explicit type conversion or casting.
 
     std::cout << "The ASCII value of " << ch << " is: " << asciiValue << std::endl;
 
     return 0;
-
 }
