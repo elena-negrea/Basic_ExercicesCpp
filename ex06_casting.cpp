@@ -5,7 +5,7 @@ int main()
 {
    /*
     int a = 'A';
-    cout << a << endl; //conversie implicita char la int
+    cout << a << endl; //COVERSIE IMPLICITA CHAR->INT
 
     int n = 5; 
     double x = 5.75;
@@ -32,16 +32,8 @@ int main()
     cout << 1LL * n * n << endl; // 1000000000000 */
 
     int num_int = 10;
-    float num_float = static_cast <float>(um_int);
-    cout << num_it << ' ' << um_float;
-
-
-
-
-
-
-
-
+    float num_float = static_cast <float>(num_int); //num_int -> float
+    cout << num_int << ' ' << num_float;
 
     return 0;
 
