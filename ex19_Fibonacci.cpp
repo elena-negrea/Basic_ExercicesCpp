@@ -4,19 +4,29 @@
  #include <iostream>
 
  int main(){
-    int n = 8;
-    int fibo[101]={0, 1};
-    
+    int n ;
+    std::cin >> n;
 
-    for(int i = 1; i<=n; i++)
-    {
-        fibo[i+1]= (i-1)+ i;
+    long long a =0, b =1; 
+    long long nextTerm;
+
+    std::cout <<"Fibonacci Series: "<< std::endl;
+
+    if (n >= 1){
+        std::cout << a;
     }
-    std::cout << "Fibonacci series: ";
-    for(int i = 0; i<=n; i++)
-    {
-        std::cout << fibo[i] << " ";
+    if (n >= 2){
+        std::cout << ", " << b;
     }
+
+    for (int i = 3; i <= n; ++i)
+    {
+        nextTerm = a + b;
+        std::cout << ", " << nextTerm;
+         a = b;
+         b = nextTerm;
+    }
+    std::cout << std::endl;
 
     return 0;
  }
