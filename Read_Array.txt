@@ -1,0 +1,55 @@
+#INTRODUCTION
+(Romanian)=> (English)
+
+array = tablou
+one-dimensional array = tablou unidimensional
+two-dimensional array = tablou bidimensional
+std::vector           = container din C++ care seamănă cu un array dinamic
+vector în matematică  = vector matematic
+
+#ex1:
+int a[5];        // one-dimensional array
+int m[3][4];     // two-dimensional array
+
+#ex2:                                   Dimensiune:
+C:     int numbers[5];              ->fixa
+C++:   int numbers[5];              ->fixa
+C++:   std::array<int, 5> numbers   ->fixa
+C++:   std::vector<int> numbers     ->dinamica
+
+#Notes
+-there is a physical dimension (the dimension of the array wich has index)
+-there is a logic dimension (the occupied space in the array with values)
+
+#Important Notes
+Array indexes start from 0.
+A classic array has a fixed physical size.
+n can be used as the logical size.
+Adding an element increases n.
+Deleting an element decreases n.
+Insertion usually requires shifting elements to the right.
+Deletion usually requires shifting elements to the left.
+
+#To ADD an element at the END:
+
+numbers[n] = 60;
+n++;
+
+#To INSERT an element at a certain position, the elements must first be shifted to the right.
+
+for(int i = n; i > 2; i--)
+{
+    numbers[i] = numbers[i - 1];
+}
+
+numbers[2] = 25;
+n++;
+
+#To DELETE an element, the following elements are shifted to the left.
+
+for(int i = 2; i < n - 1; i++)
+{
+    numbers[i] = numbers[i + 1];
+}
+
+n--;
