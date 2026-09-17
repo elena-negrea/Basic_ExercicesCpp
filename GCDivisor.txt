@@ -1,0 +1,43 @@
+ Given a two positive integers, A and B.
+ Write a C++ program that calculates their Greatest Common Divisor (GCD), also known as the Highest Common Factor (HCF).
+
+#DIVISOR:
+    -divisors of a nr appear in pairs: d & n/d
+    - a perfect sqaure has ann odd number of divisors
+        + ex: 36/6=6 , we take 6 just once. 
+        + sqr(n) is the point up to which you need to search to find one divisor from each pair of divisors. Possible divisors UP TO \(\sqrt n\).
+
+#EUCLID -substraction method
+- the greatest common divisor of two numbers also divides their difference. The algorithm works as follows:
+    +   While the two numbers are different, subtract the smaller number from the larger one.
+    +   When the two numbers become equal, their common value is the greatest common divisor of the original numbers.
+    +   The algorithm cannot be applied if one of the numbers is 0.
+
+#EUCLID -division method
+- the greatest common divisor of two numbers also divides the remainder of their division.
+
+While m != 0:
+    remainder = n%m;   -> Find the remainder when n is divided by m. 
+    n = m;             -> Then n becomes m, and m becomes the remainder. 
+    m = r;             -> When m becomes 0, the current value of n is the greatest common divisor of the original numbers.(m = r;)
+
+
+#GCD for more numbers
+gcd(a, b, c, d) = gcd(gcd(gcd(a, b), c), d)
+
+
+
+
+
+
+https://www.geeksforgeeks.org/maths/greatest-common-divisor-gcd/
+
+GCD of any two numbers is never negative or 0, and the least positive integer common to any two numbers is always 1.
+
+    To find the GCD:
+- by listing factors of each number, find the one they share, and pick the biggest one
+- by Euclidean Algorithm: Divide the larger number to the smaller, then take the divisor and divide it by the remainder. Repeat this process until the remainder is 0
+    The final non-zero remainder is your GCD
+
+notes:
+-  a loop that iterates from 1 up to the smallest of the two numbers(we don t need to try division more thenn the smallest nr)
