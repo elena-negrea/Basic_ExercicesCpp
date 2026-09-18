@@ -1,0 +1,19 @@
+#Search :
+-> sort()
+
+
+#notes:
+
+algoritmi neeficienți, de complexitate O(n^2):
+
+metoda bulelor: Bubble Sort                                 -> metoda interschimbare a valorilocr cu auxiliar in timp ce comparam valorile lor ca sortare
+sortarea prin selecție (interschimbare): Selection sort     ->
+sortarea prin inserție: Insertion sort
+metoda piticului: Gnome Sort
+etc.
+
+algoritmi eficienți, de complexitate O(n*log n):
+
+QuickSort
+MergeSort
+HeapSort
