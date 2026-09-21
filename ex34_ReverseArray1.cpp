@@ -14,11 +14,15 @@ int main(){
     std::cout << "Original Array: ";
     printArray(arr, N); 
 
-    for(int i = 0; i < N / 2; ++i){
-        int temp = arr[i];
+    for(int i = 0; i < N / 2; ++i){     //i = 0 atunci N - 1 - i = 6 - 1 - 0 = 5
+        int temp = arr[i];              //i = 2 atunci N - 1 - i = 6 - 1 - 2 = 3
         arr[i] = arr[N - 1 - i];
         arr[N - 1 - i] = temp;
     }
+    /*  i        N - 1 - i
+        0   <->      5
+        1   <->      4
+        2   <->      3*/
 
     std::cout << "Reversed Array: ";
     printArray(arr, N);
