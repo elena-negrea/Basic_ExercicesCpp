@@ -1,0 +1,16 @@
+getline() in C++ is a standard library function used to read an entire line of text from an input stream.
+It stores the extracted characters into a string until a delimiter character is encountered.
+
+By default, it stops reading when a newline character (\n) is found.
+The std::getline() function is defined inside <string> header file in C++.
+
+getline(stream, str, delim);
+
+#Parameters 
+
+- stream: Input stream from where characters are read.
+- str: String where the input is stored after being read from the stream.
+- delim(optional): Delimiter is a character where getline stop to read the data. By default, newline character '\n' is the delimiter.
+
+#Return Value ->  It returns the reference to the input stream.
+
