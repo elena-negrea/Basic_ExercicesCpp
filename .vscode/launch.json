@@ -9,7 +9,8 @@
             "cwd": "${fileDirname}",
             "MIMode": "gdb",
             "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
-            "preLaunchTask": "Build current C++ file"
+            "preLaunchTask": "Build current C++ file",
+            "externalConsole": true
         }
     ]
 }
