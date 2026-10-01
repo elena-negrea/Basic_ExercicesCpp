@@ -1,31 +1,66 @@
 #include <iostream>
 #include <cmath>
+
 int main(){
+    
+    int number;          // numarul initial
+    int sourceBase;      // baza initiala
+    int targetBase;      // baza in care vrem conversia
+    int k;               // exponentul: bigBase = smallBase^k
+    int result;          // rezultatul conversiei
 
-    //base b -> base 10
-    int n = 347, b1 = 8, digits = 3, b2 = 2;
-    std::cout<< "Initial number: " << n << " base " << b1 << " into base " << b2 << std::endl;
-//the ideea: b = 2^3, groups of k = 3 bits, starting from right
-//convert each group into one digit in base2
-//every digit from the n base b would be transformed into 3 bits 3 = 011 how? we use the division method
 
-    //we use the divizion method:  3 : 2 = 1,1; 1 : 2 = 0,1 => 3(8) = 011(2); 
+     
+//input 
 
-    //so we need the quotient and remains. quotient = n; first we find out the remaind by %, next we divide the quotient
-    int n2 = 0;//n-am nev
-    int quotient = n;
-    int arr[65];
-    int i = 0;
+    std::cout << "Enter the number and it's base: ";
+    std::cin >> number >> sourceBase;
+    std::cout << std::endl;
 
-    while(quotient){
-        arr[i] = quotient % b2;
-        quotient = quotient / b2;
-        i++;
+    std::cout << "Enter the conversion base: ";
+    std::cin >>  targetBase;
+    std::cout << std::endl;
+
+    std::cout<< "Initial number: " << number << " base " << sourceBase << std::endl;
+
+// validate input 
+
+    //we check if the bases are 0 or bigger - we dont make for now the 16 number system with A,B...
+    while(targetBase > 10){
+        std::cout << "Invalid input. Try again.";
+        std::cin.clear();
+        std::cin.ignore(100, '\n');
+        std::cout << "Enter the coversion base: " ;
+        std::cin >> targetBase;
+        std::cout << std::endl;
     }
-    std::cout << "number : ";
-   for(int j = i - 1; j>=0; j --){
-        std::cout << arr[j];
-   }
+
+    
+
+//check if bases are related: bigBase = smallBase^k
+    // I need function for checking how much is k in  d = b^k
+
+ //if small -> big
+        // grouping
+
+    /*if:
+    n(b) -> m(d), where d = b^k, we group n
+    
+        I need function?
+        */
+
+//else if big -> small
+        // expanding
+
+    /*else if:
+    n(d) -> m(b), where d = b^k, we result a group fromthe digits of m */
+
+
+    /*else: 
+     n !div with d => base b ->  base 10->  base d
+        function B1toB2Conv.cpp */
+//else
+    // sourceBase -> 10 -> targetBase       
 
 
     return 0;
