@@ -1,0 +1,19 @@
+Există și alte situații unde biții sunt foarte utili. De exemplu, într-un singur număr putem păstra mai multe stări:
+00000101
+
+și să spunem:
+bit 0 → sunet ON/OFF
+bit 1 → fullscreen ON/OFF
+bit 2 → notifications ON/OFF
+bit 3 → dark mode ON/OFF
+
+Atunci poți porni, opri sau verifica o singură setare fără să le afectezi pe celelalte.
+Asta apare în lucruri precum flags, permissions, hardware/registers, protocoale, grafică, networking, dar și în probleme algoritmice.
+Pentru tine acum, însă, motivul cel mai concret este:
+Am un int. Vreau să aflu sau să modific ceva despre anumiți biți ai acelui int, fără să-l transform eu într-un șir de 0 și 1.
+
+
+n = 1  → 0001 & 0001 = 0001 → 1
+n = 2  → 0010 & 0001 = 0000 → 0
+n = 3  → 0011 & 0001 = 0001 → 1
+n = 4  → 0100 & 0001 = 0000 → 0
