@@ -31,8 +31,9 @@ int main(){
     }; //digits = line, letter = collumn
 
     uint64_t blackSquares = 0;
-    //uint64_t whiteSquares = 0; 
+    uint64_t whiteSquares = 0; 
 
+    
     /*NOTE: we know that the board starts with black square on the position 0. 
     so we have even nr = black and odd nr = white
     BUT at the nest row, it s the other way, inverse
