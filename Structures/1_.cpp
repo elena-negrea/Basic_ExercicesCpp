@@ -1,27 +1,33 @@
 #include <iostream>
 #include <string>
 
-struct Adress {
-	std::string street;
-	std::string city;
-	int zipCode;
-};
-struct Employee {
+struct Student {
 	std::string name;
-	int id;
-	Adress homeAddress; //nested structure
+	int rollNo;
+	float marks[5];
+	
+	//Constructor
+	Student(std::string n, int r, float m[]){
+		name = n ;
+		rollNo = r ;
+		for(int i = 0; i < 5; i++){
+			marks[i] = m[i];
+		}
+	}
+	//Member function to calculate average
+	float average() {
+		float sum = 0;
+		for(int i = 0; i <5; i++){
+			sum += marks[i];
+		}
+		return sum /5;
+	}
 };
 
-int main(){
-	Employee emp = {
-		"John Doe",
-		1001,
-		{"123 Main St", "New york", 10001}
-	};
-	std::cout << "Employee: "<< emp.name << std::endl;
-	std::cout << "Adress: " << emp.homeAddress.street <<", "
-						<<emp.homeAddress.city << " " 
-						<< emp.homeAddress.zipCode << std::endl;
-	return 0;
+int main() {
+	float m[] = {85.5, 90.0, 78.5, 92.5, 88.0};
+	Student s("Alice", 101, m);
 	
+	std::cout << "Average marks: "<< s.average() << std::endl;
+	return 0;
 }
