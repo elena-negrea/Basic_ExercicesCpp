@@ -28,8 +28,8 @@ int main() {
         std::cout<< "Enter Book price: ";
         std::cin >> b[i].price;
          /*cin >> leaves the newline character \n int the input area.*/
-       // Solution: Igbore it before the next getline() call
-        std::cin.ignore();
+       //Update Solution1:
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     }
     //Output 3 books information
