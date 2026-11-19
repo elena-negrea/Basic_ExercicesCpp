@@ -17,6 +17,7 @@ int main() {
     //input 3 books information
     for(int i =0; i<3; i++){
         std::cout<<" --- Enter data for book " << i+1<< " --- "<< std::endl;
+        std::cout << '\n';
 
         std::cout<<"Enter Book Title: ";
         std::getline(std::cin, b[i].title);
@@ -34,7 +35,7 @@ int main() {
     //Output 3 books information
     for(int i =0; i< 3; i++){
         std::cout<<" --- Book nr. " << i+1<< " --- "<< std::endl;
-
+        std::cout << '\n';
         std::cout << "Book Title: " << b[i].title << std::endl;
         std::cout << "Book Author: " << b[i].author << std::endl;
         std::cout << "Price: $" << b[i].price << std::endl;
