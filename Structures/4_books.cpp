@@ -23,11 +23,13 @@ int main() {
 
         std::cout<<"Enter Book Author: ";
         std::getline(std::cin, b[i].author);
-        /*character \n is in the input flux. the next line meets it and it will return 
-        an empthy string. So aswell the user dosen t has a chance to write the title etc*/
 
         std::cout<< "Enter Book price: ";
         std::cin >> b[i].price;
+         /*cin >> leaves the newline character \n int the input area.*/
+       // Solution: Igbore it before the next getline() call
+        std::cin.ignore();
+
     }
     //Output 3 books information
     for(int i =0; i< 3; i++){
