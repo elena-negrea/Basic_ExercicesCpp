@@ -17,7 +17,6 @@ struct Student{//outer structure
 };
 
 struct Book {
-
     std::string title;
     std::string author;
     float price;
@@ -35,10 +34,15 @@ float calculate_total_price(Book b[], int nr_books ){//foor b[], the parameter t
 int main() {
     Student s = {"Alex", {15, 6, 2004}};
     std::cout << s.name << std::endl;
-    // Example of declaring an array of 3 books
-    constexpr int nr_books = 3;
 
-    Book b[nr_books];
+    //Using the advantages of memory allocation
+    int nr_books;
+    std::cout << "Enter number of books: ";
+    std::cin >> nr_books;
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    Book* b = new Book[nr_books]; // dynamyc memory allocation
+
     //input 3 books information
     for(int i = 0; i<nr_books; i++){
         std::cout<<" --- Enter data for book " << i+1<< " --- "<< std::endl;
@@ -69,6 +73,9 @@ int main() {
     std::cout << "Total price of all " << nr_books <<" books: $";
     std::cout << std::fixed << std::setprecision(2);
     std::cout << grand_total << std::endl;
+
+    delete[] b;
+    b = nullptr;
 
     return 0;
 }
