@@ -1,5 +1,8 @@
 #include <string>
 #include <iostream>
+#include <limits> //for 'numeric_limits', 'fixed' is avaible in ios
+#include <iomanip> //for 'std::setprecision()'
+
 /* Declare an array capable of storing information for 3 Book structures.
  Write a program to loop through the array, prompting the user to input the data (title, author, price) for each of the 3 books. Finally, loop through the array again to display the data for all 3 books.*/
 
@@ -11,11 +14,22 @@ struct Book {
     float price;
 };
 
+float calculate_total_price(Book b[], int nr_books ){//foor b[], the parameter treats it as a pointer
+    float sum = 0.0f;
+    for(int i = 0; i < nr_books; i++){
+        sum += b[i].price;
+    }
+    return sum;
+
+}
+
 int main() {
     // Example of declaring an array of 3 books
-    Book b[3];
+    constexpr int nr_books = 3;
+
+    Book b[nr_books];
     //input 3 books information
-    for(int i = 0; i<3; i++){
+    for(int i = 0; i<nr_books; i++){
         std::cout<<" --- Enter data for book " << i+1<< " --- "<< std::endl;
         std::cout << '\n';
 
@@ -33,13 +47,17 @@ int main() {
 
     }
     //Output 3 books information
-    for(int i =0; i< 3; i++){
+    for(int i =0; i< nr_books; i++){
         std::cout<<" --- Book nr. " << i+1<< " --- "<< std::endl;
         std::cout << '\n';
         std::cout << "Book Title: " << b[i].title << std::endl;
         std::cout << "Book Author: " << b[i].author << std::endl;
         std::cout << "Price: $" << b[i].price << std::endl;
     }
+    float grand_total  = calculate_total_price(b, nr_books);
+    std::cout << "Total price of all " << nr_books <<" books: $";
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << grand_total << std::endl;
 
     return 0;
 }
