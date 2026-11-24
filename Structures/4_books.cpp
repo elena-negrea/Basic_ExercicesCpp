@@ -3,7 +3,6 @@
 #include <limits> //for 'numeric_limits', 'fixed' is avaible in ios
 #include <iomanip> //for 'std::setprecision()'
 
-/* Nested Structure (Student Date of Birth).*/
 
 // Define the Book structure
 struct DateOfBirth{//inner structure
