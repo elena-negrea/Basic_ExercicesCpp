@@ -15,7 +15,7 @@ int main() {
     // Example of declaring an array of 3 books
     Book b[3];
     //input 3 books information
-    for(int i =0; i<3; i++){
+    for(int i = 0; i<3; i++){
         std::cout<<" --- Enter data for book " << i+1<< " --- "<< std::endl;
         std::cout << '\n';
 
