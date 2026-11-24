@@ -3,10 +3,20 @@
 #include <limits> //for 'numeric_limits', 'fixed' is avaible in ios
 #include <iomanip> //for 'std::setprecision()'
 
-/* Declare an array capable of storing information for 3 Book structures.
- Write a program to loop through the array, prompting the user to input the data (title, author, price) for each of the 3 books. Finally, loop through the array again to display the data for all 3 books.*/
+/* Nested Structure (Student Date of Birth).*/
 
 // Define the Book structure
+struct DateOfBirth{//inner structure
+    int day;
+    int month;
+    int year;
+};
+
+struct Student{//outer structure
+    std::string name;
+    DateOfBirth birthdate; //Nested structure member
+};
+
 struct Book {
 
     std::string title;
@@ -24,6 +34,8 @@ float calculate_total_price(Book b[], int nr_books ){//foor b[], the parameter t
 }
 
 int main() {
+    Student s = {"Alex", {15, 6, 2004}};
+    std::cout << s.name << std::endl;
     // Example of declaring an array of 3 books
     constexpr int nr_books = 3;
 
