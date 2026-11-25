@@ -30,6 +30,14 @@ float calculate_total_price(Book b[], int nr_books ){//foor b[], the parameter t
     return sum;
 
 }
+std::string find_most_expensive(Book* b, int nr_books){
+    int max_index = 0;
+    for(int i = 1; i<nr_books; i++){
+        if (b[i].price > b[max_index].price)
+            max_index = i;
+    }
+    return b[max_index].title;
+}
 
 int main() {
     Student s = {"Alex", {15, 6, 2004}};
@@ -40,6 +48,7 @@ int main() {
     std::cout << "Enter number of books: ";
     std::cin >> nr_books;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 
     Book* b = new Book[nr_books]; // dynamyc memory allocation
 
@@ -73,6 +82,8 @@ int main() {
     std::cout << "Total price of all " << nr_books <<" books: $";
     std::cout << std::fixed << std::setprecision(2);
     std::cout << grand_total << std::endl;
+
+    std::cout <<"\nMost expensive book is: " << find_most_expensive(b,nr_books);
 
     delete[] b;
     b = nullptr;
